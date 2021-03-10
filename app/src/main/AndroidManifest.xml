@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Michael_00000033572_IF633_FL_UTS">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".ProfileActivity" android:label="My Profile">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" /> <!--This is just a temporary solution -->
+        </activity>
+        <activity android:name=".LoginActivity" android:label="Login" />
+        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
