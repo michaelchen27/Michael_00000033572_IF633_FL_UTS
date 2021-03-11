@@ -15,14 +15,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" /> <!--This is just a temporary solution -->
         </activity>
-        <activity android:name=".LoginActivity" android:label="Login" />
-        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <activity android:name=".LoginActivity" android:label="Login">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" /> <!--This is just a temporary solution -->
+        </activity>
+
+        <activity android:name=".MusicActivity" android:label="Music List" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
     </application>
 
 </manifest>

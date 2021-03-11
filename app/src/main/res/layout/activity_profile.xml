@@ -71,7 +71,7 @@
         app:layout_constraintTop_toTopOf="@id/shape"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:text="References"
         android:textColor="@color/white"
         android:textSize="30sp"
