@@ -2,27 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="umn.ac.id">
 
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="30" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Michael_00000033572_IF633_FL_UTS">
-
-        <activity android:name=".ProfileActivity" android:label="My Profile">
+        <activity android:name=".PlayerActivity"></activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="My Profile">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" /> <!--This is just a temporary solution -->
+                android:value=".MainActivity" /> <!-- This is just a temporary solution -->
         </activity>
-
-        <activity android:name=".LoginActivity" android:label="Login">
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" /> <!--This is just a temporary solution -->
+                android:value=".MainActivity" /> <!-- This is just a temporary solution -->
         </activity>
-
-        <activity android:name=".MusicActivity" android:label="Music List" />
+        <activity
+            android:name=".MusicActivity"
+            android:label="Music List" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,9 +41,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>
