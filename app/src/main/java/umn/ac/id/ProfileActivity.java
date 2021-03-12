@@ -20,7 +20,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-
         TextView ref1 = (TextView) findViewById(R.id.coding_with_evan);
         ref1.setMovementMethod(LinkMovementMethod.getInstance());
     }
@@ -29,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+                this.finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

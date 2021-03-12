@@ -22,11 +22,8 @@
 
         <activity
             android:name=".ProfileActivity"
-            android:label="My Profile">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" /> <!-- This is just a temporary solution -->
-        </activity>
+            android:label="My Profile"/>
+
         <activity
             android:name=".LoginActivity"
             android:label="Login">

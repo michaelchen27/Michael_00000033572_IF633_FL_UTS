@@ -67,6 +67,10 @@ public class MusicActivity extends AppCompatActivity {
         runtimePermission();
     }
 
+    //Disable back button on Music List
+    @Override
+    public void onBackPressed() {}
+
     //Submenu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
