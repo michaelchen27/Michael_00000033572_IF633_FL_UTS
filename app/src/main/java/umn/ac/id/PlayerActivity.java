@@ -31,6 +31,7 @@ public class PlayerActivity extends AppCompatActivity {
     ImageView imageView;
 
     String sname;
+    String end;
     public static final String EXTRA_NAME = "song_name";
     static MediaPlayer mediaPlayer;
     int position;
@@ -89,6 +90,7 @@ public class PlayerActivity extends AppCompatActivity {
         txtname.setSelected(true);
         Uri uri = Uri.parse(mySongs.get(position).toString());
         sname = mySongs.get(position).getName();
+        sname = sname.substring(0, sname.length() - 4);
         txtname.setText(sname);
 
         mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
@@ -187,6 +189,8 @@ public class PlayerActivity extends AppCompatActivity {
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), u);
                 sname = mySongs.get(position).getName();
                 txtname.setText(sname);
+                end = createTime(mediaPlayer.getDuration());
+                txtstop.setText(end);
                 mediaPlayer.start();
                 btnplay.setBackgroundResource(R.drawable.ic_pause);
                 startAnimation(imageView);
@@ -208,6 +212,8 @@ public class PlayerActivity extends AppCompatActivity {
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), u);
                 sname = mySongs.get(position).getName();
                 txtname.setText(sname);
+                end = createTime(mediaPlayer.getDuration());
+                txtstop.setText(end);
                 mediaPlayer.start();
                 btnplay.setBackgroundResource(R.drawable.ic_pause);
                 startAnimation(imageView);

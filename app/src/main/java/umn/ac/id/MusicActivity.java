@@ -47,19 +47,17 @@ public class MusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        listView = findViewById(R.id.listViewSong);
-        runtimePermission();
-    }
-
-    //Popup Window Dialog
-    public void onStart() {
-        super.onStart();
+//       Pop Up Dialog
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         final View popupView = getLayoutInflater().inflate(R.layout.popup_window, null);
 
         dialogBuilder.setView(popupView);
         AlertDialog dialog = dialogBuilder.create();
         dialog.show();
+
+        //Music List
+        listView = findViewById(R.id.listViewSong);
+        runtimePermission();
     }
 
     //Permission
