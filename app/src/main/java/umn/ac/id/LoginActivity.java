@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void validate(String username, String password) {
-        if((username.equals("a")) && password.equals("a")) {
+        if((username.equals("")) && password.equals("")) {
             startActivity(new Intent(LoginActivity.this, MusicActivity.class));
         }
     }

@@ -188,6 +188,7 @@ public class PlayerActivity extends AppCompatActivity {
                 Uri u = Uri.parse(mySongs.get(position).toString());
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), u);
                 sname = mySongs.get(position).getName();
+                sname = sname.substring(0, sname.length() - 4);
                 txtname.setText(sname);
                 end = createTime(mediaPlayer.getDuration());
                 txtstop.setText(end);
@@ -211,6 +212,7 @@ public class PlayerActivity extends AppCompatActivity {
                 Uri u = Uri.parse(mySongs.get(position).toString());
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), u);
                 sname = mySongs.get(position).getName();
+                sname = sname.substring(0, sname.length() - 4);
                 txtname.setText(sname);
                 end = createTime(mediaPlayer.getDuration());
                 txtstop.setText(end);
