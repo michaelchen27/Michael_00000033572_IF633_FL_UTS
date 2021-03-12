@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,6 +31,8 @@ public class PlayerActivity extends AppCompatActivity {
     SeekBar seekmusic;
     BarVisualizer visualizer;
     ImageView imageView;
+
+    public static String curr_play;
 
     String sname;
     String end;
@@ -54,6 +58,7 @@ public class PlayerActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,11 +81,6 @@ public class PlayerActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageview);
 
 
-        if (mediaPlayer != null) {
-            mediaPlayer.stop();
-            mediaPlayer.release();
-        }
-
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
 
@@ -89,12 +89,24 @@ public class PlayerActivity extends AppCompatActivity {
         position = bundle.getInt("pos", 0);
         txtname.setSelected(true);
         Uri uri = Uri.parse(mySongs.get(position).toString());
+
         sname = mySongs.get(position).getName();
         sname = sname.substring(0, sname.length() - 4);
         txtname.setText(sname);
 
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
-        mediaPlayer.start();
+        String currently_playing = i.getStringExtra("currentplay");
+        if (!sname.equals(currently_playing)) {
+            curr_play = sname;
+            //Prevent overlapping music
+            if (mediaPlayer != null) {
+                mediaPlayer.stop();
+                mediaPlayer.release();
+            }
+
+            mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
+            mediaPlayer.start();
+        }
+
 
         updateSeekBar = new Thread() {
             @Override
@@ -229,18 +241,18 @@ public class PlayerActivity extends AppCompatActivity {
         btnff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mediaPlayer.isPlaying()) {
+//                if (mediaPlayer.isPlaying()) {
                     mediaPlayer.seekTo(mediaPlayer.getCurrentPosition()+10000);
-                }
+//                }
             }
         });
 
         btnfr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mediaPlayer.isPlaying()) {
+//                if(mediaPlayer.isPlaying()) {
                     mediaPlayer.seekTo(mediaPlayer.getCurrentPosition()-10000);
-                }
+//                }
             }
         });
     } //on create

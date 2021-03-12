@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tap outside of this window to dismiss"
+        android:text="Tap outside window to dismiss."
         android:textColor="@color/light_grey"/>
 
 </LinearLayout>

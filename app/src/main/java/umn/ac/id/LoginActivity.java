@@ -1,6 +1,7 @@
 package umn.ac.id;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText password;
     private TextView errormsg;
     private ProgressBar spinner;
+    public static Boolean loggedIn;
 
 
     @Override
@@ -31,8 +33,9 @@ public class LoginActivity extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.password);
         TextView errormsg = (TextView) findViewById(R.id.errormsg);
         spinner = (ProgressBar)findViewById(R.id.progressBar1);
-
         spinner.setVisibility(View.GONE);
+
+        loggedIn = false;
 
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean status = validate(username.getText().toString(), password.getText().toString());
                 if (status) {
                     spinner.setVisibility(View.VISIBLE);
+                    loggedIn = true;
                     startActivity(new Intent(LoginActivity.this, MusicActivity.class));
                     finish();
                 } else {

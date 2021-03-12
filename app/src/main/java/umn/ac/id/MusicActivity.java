@@ -41,6 +41,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import static umn.ac.id.PlayerActivity.curr_play;
 import static umn.ac.id.PlayerActivity.mediaPlayer;
 
 public class MusicActivity extends AppCompatActivity {
@@ -68,8 +69,8 @@ public class MusicActivity extends AppCompatActivity {
     }
 
     //Disable back button on Music List
-    @Override
-    public void onBackPressed() {}
+//    @Override
+//    public void onBackPressed() {}
 
     //Submenu
     @Override
@@ -152,7 +153,8 @@ public class MusicActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), PlayerActivity.class)
                         .putExtra("songs", mySongs)
                         .putExtra("songname", songName)
-                        .putExtra("pos", i));
+                        .putExtra("pos", i)
+                        .putExtra("currentplay", curr_play));
             }
         });
     }
