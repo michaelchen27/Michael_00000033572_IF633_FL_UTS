@@ -33,7 +33,7 @@ public class PlayerActivity extends AppCompatActivity {
     String sname;
     String end;
     public static final String EXTRA_NAME = "song_name";
-    static MediaPlayer mediaPlayer;
+    public static MediaPlayer mediaPlayer;
     int position;
     ArrayList<File> mySongs;
     Thread updateSeekBar;

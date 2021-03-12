@@ -2,7 +2,9 @@ package umn.ac.id;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +12,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button profile_button;
     private Button login_button;
+    public static Activity fa;
 
     public MainActivity() { }
 
@@ -17,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fa = this;
 
         Button profile_button = (Button) findViewById(R.id.profile_button);
         Button login_button = (Button) findViewById(R.id.login_button);

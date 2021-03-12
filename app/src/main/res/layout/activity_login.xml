@@ -35,11 +35,23 @@
         android:textColor="@color/white"/>
 
     <TextView
+        android:id="@+id/errormsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:fontFamily="@font/inter_semibold"
+        app:layout_constraintTop_toBottomOf="@id/login_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/red"/>
+
+    <TextView
         android:id="@+id/username_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent" android:layout_marginStart="30dp"
-        app:layout_constraintTop_toBottomOf="@id/login_title" android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/errormsg" android:layout_marginTop="20dp"
         android:text="Username"
         android:textColor="@color/white"
         android:textSize="30dp"
@@ -92,4 +104,17 @@
         android:padding="10dp"
         android:backgroundTint="@color/red"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:indeterminateTint="@color/red"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

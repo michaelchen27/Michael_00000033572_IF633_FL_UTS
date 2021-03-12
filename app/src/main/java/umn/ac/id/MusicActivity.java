@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +41,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import static umn.ac.id.PlayerActivity.mediaPlayer;
+
 public class MusicActivity extends AppCompatActivity {
     ListView listView;
     String[] items;
@@ -46,6 +51,8 @@ public class MusicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+
+
 
 //       Pop Up Dialog
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -58,6 +65,35 @@ public class MusicActivity extends AppCompatActivity {
         //Music List
         listView = findViewById(R.id.listViewSong);
         runtimePermission();
+    }
+
+    //Submenu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.submenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.submenu_profile:
+                startActivity(new Intent(MusicActivity.this, ProfileActivity.class));
+                return true;
+            case R.id.submenu_logout:
+                if (mediaPlayer != null) {
+                    if(mediaPlayer.isPlaying()) {
+                        mediaPlayer.stop();
+                        mediaPlayer.release();
+                    }
+                }
+                MainActivity.fa.finish();
+                startActivity(new Intent(MusicActivity.this, MainActivity.class));
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     //Permission
