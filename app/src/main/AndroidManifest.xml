@@ -32,9 +32,6 @@
             android:name=".LoginActivity"
             android:label="Login"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
         </activity>
 
         <activity

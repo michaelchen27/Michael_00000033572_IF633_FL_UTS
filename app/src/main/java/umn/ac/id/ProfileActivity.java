@@ -11,7 +11,6 @@ import androidx.core.app.NavUtils;
 import java.util.Objects;
 
 public class ProfileActivity extends AppCompatActivity {
-    private TextView ref1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,19 +19,25 @@ public class ProfileActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        TextView ref1 = (TextView) findViewById(R.id.coding_with_evan);
+        TextView ref1 = (TextView) findViewById(R.id.ref1);
+        TextView ref2 = (TextView) findViewById(R.id.ref2);
+        TextView ref3 = (TextView) findViewById(R.id.ref3);
+        TextView ref4 = (TextView) findViewById(R.id.ref4);
+        TextView ref5 = (TextView) findViewById(R.id.ref5);
         ref1.setMovementMethod(LinkMovementMethod.getInstance());
+        ref2.setMovementMethod(LinkMovementMethod.getInstance());
+        ref3.setMovementMethod(LinkMovementMethod.getInstance());
+        ref4.setMovementMethod(LinkMovementMethod.getInstance());
+        ref5.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
+    //Back Button
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            this.finish();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
-
 }

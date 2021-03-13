@@ -3,6 +3,7 @@ package umn.ac.id;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -66,6 +67,18 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean validate(String username, String password) {
         return (username.equals("a")) && password.equals("a");
+    }
+
+    // Back Button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

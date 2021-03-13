@@ -2,5 +2,9 @@
     <string name="app_name">Music Player</string>
     <string name="logo_description">music-logo</string>
     <string name="title">Music Player</string>
-    <string name="coding_with_evan"><a href="https://www.youtube.com/c/CodingWithEvan/videos">Coding with Evan YouTube Channel</a></string>
+    <string name="ref1"><a href="https://developer.android.com/guide">Android Studio Documentation</a></string>
+    <string name="ref2"><a href="https://www.youtube.com/c/CodingWithEvan/videos">Coding with Evan YouTube Channel</a></string>
+    <string name="ref3"><a href="https://stackoverflow.com/questions/tagged/android-studio">Stack Overflow Android Studio Forum</a></string>
+    <string name="ref4"><a href="https://github.com/gauravk95/audio-visualizer-android">Gauravk95\'s Android Audio Visualizer</a></string>
+    <string name="ref5"><a href="https://github.com/Karumi/Dexter">Dexter - Requesting permissions at runtime</a></string>
 </resources>
