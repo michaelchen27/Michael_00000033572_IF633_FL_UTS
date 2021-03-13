@@ -53,8 +53,6 @@ public class MusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-
-
 //       Pop Up Dialog
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         final View popupView = getLayoutInflater().inflate(R.layout.popup_window, null);
@@ -125,7 +123,7 @@ public class MusicActivity extends AppCompatActivity {
             if (singlefile.isDirectory() && !singlefile.isHidden())  {
                 arrayList.addAll(findSong(singlefile));
             } else {
-                if(singlefile.getName().endsWith(".mp3") || singlefile.getName().endsWith(".wav")) {
+                if(singlefile.getName().endsWith(".mp3")) {
                     arrayList.add(singlefile);
                 }
             }
@@ -138,7 +136,7 @@ public class MusicActivity extends AppCompatActivity {
 
         items = new String[mySongs.size()];
         for (int i = 0; i < mySongs.size(); i++) {
-            items[i] = mySongs.get(i).getName().toString().replace(".mp3", "").replace(".wav", "");
+            items[i] = mySongs.get(i).getName().toString().replace(".mp3", "");
         }
 //        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 //        listView.setAdapter(myAdapter);

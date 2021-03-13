@@ -80,7 +80,6 @@ public class PlayerActivity extends AppCompatActivity {
         visualizer = findViewById(R.id.blast);
         imageView = findViewById(R.id.imageview);
 
-
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
 
@@ -105,6 +104,12 @@ public class PlayerActivity extends AppCompatActivity {
 
             mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
             mediaPlayer.start();
+        }
+
+        if (mediaPlayer.isPlaying()) {
+            btnplay.setBackgroundResource(R.drawable.ic_pause);
+        } else {
+            btnplay.setBackgroundResource(R.drawable.ic_play);
         }
 
 

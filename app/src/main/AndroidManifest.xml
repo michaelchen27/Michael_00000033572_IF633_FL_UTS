@@ -18,32 +18,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Michael_00000033572_IF633_FL_UTS">
 
-        <activity android:name=".PlayerActivity" android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"/>
+        <activity
+            android:name=".PlayerActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ProfileActivity"
-            android:label="My Profile"/>
+            android:label="My Profile"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".LoginActivity"
-            android:label="Login">
+            android:label="Login"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" /> <!-- This is just a temporary solution -->
+                android:value=".MainActivity" />
         </activity>
+
         <activity
             android:name=".MusicActivity"
-            android:label="Music List" />
-        <activity android:name=".SplashActivity">
+            android:label="Music List"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
