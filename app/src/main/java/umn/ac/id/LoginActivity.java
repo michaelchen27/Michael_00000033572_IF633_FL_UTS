@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean validate(String username, String password) {
-        return (username.equals("a")) && password.equals("a");
+        return (username.equals("uasmobile")) && password.equals("uasmobilegenap");
     }
 
     // Back Button

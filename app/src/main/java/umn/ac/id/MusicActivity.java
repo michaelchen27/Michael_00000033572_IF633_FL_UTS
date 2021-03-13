@@ -92,8 +92,8 @@ public class MusicActivity extends AppCompatActivity {
                     }
                 }
                 MainActivity.fa.finish();
-                startActivity(new Intent(MusicActivity.this, MainActivity.class));
                 finish();
+                startActivity(new Intent(MusicActivity.this, MainActivity.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);
