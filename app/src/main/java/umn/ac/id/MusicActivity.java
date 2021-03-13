@@ -53,6 +53,7 @@ public class MusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
+
 //       Pop Up Dialog
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         final View popupView = getLayoutInflater().inflate(R.layout.popup_window, null);
@@ -88,8 +89,9 @@ public class MusicActivity extends AppCompatActivity {
                 if (mediaPlayer != null) {
                     if(mediaPlayer.isPlaying()) {
                         mediaPlayer.stop();
-                        mediaPlayer.release();
+//                        mediaPlayer.release();
                     }
+////                    mediaPlayer = null;
                 }
                 MainActivity.fa.finish();
                 finish();
