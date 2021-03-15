@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean status = validate(username.getText().toString(), password.getText().toString());
                 if (status) {
                     spinner.setVisibility(View.VISIBLE);
+                    login_button.setText("LOGGING IN...");
                     loggedIn = true;
                     startActivity(new Intent(LoginActivity.this, MusicActivity.class));
                     finish();
