@@ -45,7 +45,6 @@ public class LoginActivity extends AppCompatActivity {
                 if (status) {
                     spinner.setVisibility(View.VISIBLE);
                     login_button.setText("LOGGING IN...");
-                    loggedIn = true;
                     startActivity(new Intent(LoginActivity.this, MusicActivity.class));
                     finish();
                 } else {

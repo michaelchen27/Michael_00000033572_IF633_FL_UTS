@@ -41,6 +41,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import static umn.ac.id.LoginActivity.loggedIn;
 import static umn.ac.id.PlayerActivity.curr_play;
 import static umn.ac.id.PlayerActivity.mediaPlayer;
 
@@ -53,23 +54,21 @@ public class MusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
+        if(!loggedIn) {
+            //Pop Up Dialog
+            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+            final View popupView = getLayoutInflater().inflate(R.layout.popup_window, null);
 
-//       Pop Up Dialog
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        final View popupView = getLayoutInflater().inflate(R.layout.popup_window, null);
-
-        dialogBuilder.setView(popupView);
-        AlertDialog dialog = dialogBuilder.create();
-        dialog.show();
+            dialogBuilder.setView(popupView);
+            AlertDialog dialog = dialogBuilder.create();
+            dialog.show();
+            loggedIn = true;
+        }
 
         //Music List
         listView = findViewById(R.id.listViewSong);
         runtimePermission();
     }
-
-    //Disable back button on Music List
-//    @Override
-//    public void onBackPressed() {}
 
     //Submenu
     @Override
